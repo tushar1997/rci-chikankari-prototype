@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rupesh Chikan Industries — Lucknowi Chikankari</title>
+<meta name="description" content="Hand-embroidered Lucknowi chikankari suit sets, sarees, kurtis and bottoms from Chowk, Lucknow. Prototype.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231d1427'/%3E%3Cg fill='%23fbf7ef'%3E%3Cellipse cx='32' cy='19' rx='6' ry='10'/%3E%3Cellipse cx='32' cy='45' rx='6' ry='10'/%3E%3Cellipse cx='19' cy='32' rx='10' ry='6'/%3E%3Cellipse cx='45' cy='32' rx='10' ry='6'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ff9ec4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800&family=Jost:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Noto+Nastaliq+Urdu:wght@500&display=swap">
+<link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+
+<!-- offer bar -->
+<div class="offer" aria-label="Offers">
+  <div class="marquee"><div class="track" id="offerTrack"></div></div>
+</div>
+
+<!-- nav -->
+<header class="nav" id="nav">
+  <nav class="links" aria-label="Main">
+    <a href="#drop">Shop</a><a href="#stitches">Stitches</a><a href="#process">How it's made</a><a href="#vibes">Occasions</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="brand" href="#top" aria-label="Rupesh Chikan Industries home">
+    <img src="images/rci-logo.png" alt="RCI — Rupesh Chikan Industries" width="1024" height="640">
+  </a>
+  <div class="actions">
+    <button class="icon-btn" id="wishBtn" aria-label="Wishlist"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><i id="wishCount">0</i></button>
+    <button class="icon-btn" id="bagBtn" aria-label="Open bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><i id="bagCount">0</i></button>
+  </div>
+</header>
+
+<!-- hero: ported from the Spider-Man trail reveal — plain muslin becomes chikankari under the cursor -->
+<section class="hero" id="top">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="glint" id="glint" aria-hidden="true"></div>
+  <svg class="jaali tl" viewBox="0 0 300 300" aria-hidden="true"></svg>
+  <svg class="jaali br" viewBox="0 0 300 300" aria-hidden="true"></svg>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="eyebrow">Chowk · Lucknow · <span class="ur">لکھنؤ</span></span>
+      <h1 class="title"><span>Plain</span><span>muslin,</span></h1>
+      <p class="desc">Just fabric. Soft, quiet, a little boring. Then a karigar in Chowk picks up a needle and spends weeks with it.</p>
+      <a class="btn magnetic" href="#drop"><span>Pehle aap → Shop</span></a>
+    </div>
+    <div class="hero-right">
+      <figure class="arch-frame" data-cursor>
+        <img src="https://images.unsplash.com/photo-1667665970124-2273c6ef3489?w=700&h=980&fit=crop&crop=faces,center&q=75&auto=format" alt="Ivory chikankari anarkali">
+        <figcaption>Aabha Ivory Anarkali · ₹3,299</figcaption>
+      </figure>
+      <div class="right-copy">
+        <span class="eyebrow">32 stitches later…</span>
+        <h2 class="title"><span>Chikan</span><span>kari.</span></h2>
+      </div>
+      <div class="sticker" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#circ">लखनऊ ✦ HAND MADE IN LUCKNOW ✦ </textPath></text></svg>
+        <b>100%<br>hand<br>work</b>
+      </div>
+    </div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1440 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path id="skyPath"/></svg>
+  <div class="hint" id="hint">▸ Move across to embroider the fabric ◂</div>
+</section>
+
+<!-- tilted tape -->
+<div class="tape" aria-hidden="true">
+  <div class="marquee"><div class="track" id="tapeTrack"></div></div>
+</div>
+
+<!-- the drop: product grid -->
+<section class="section" id="drop">
+  <div class="sec-head reveal">
+    <span class="kicker">The drop · 135+ styles</span>
+    <h2 class="hop">You'll <em>obsess</em> over these</h2>
+    <p class="sub">Real RCI pieces and prices. Tap the heart, hit quick add, or filter by what you're shopping for.</p>
+  </div>
+  <div class="chips reveal" id="chips" role="tablist" aria-label="Filter products"><span class="pill" id="chipPill"></span></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- stitch explorer -->
+<section class="section stitches" id="stitches">
+  <div class="sec-head reveal">
+    <span class="kicker">The craft</span>
+    <h2 class="hop">32 stitches. <em>Meet six.</em></h2>
+    <p class="sub">Hover (or tap) a card and watch the stitch sew itself. This is the language every RCI piece is written in.</p>
+  </div>
+  <div class="stitch-grid" id="stitchGrid"></div>
+</section>
+
+<!-- lucknow band -->
+<section class="lko" id="lucknow">
+  <div class="lko-inner">
+    <div class="lko-copy reveal">
+      <span class="kicker light">Muskuraiye, aap Lucknow mein hain</span>
+      <h2>Born in the <em>galis</em> of Chowk.</h2>
+      <p>Our workshop sits in Sondhi Tola, a short walk from the Bara Imambara and Rumi Darwaza. The same lanes where chikan has been stitched for centuries, in the city that taught India <em>pehle aap</em>.</p>
+      <div class="stats">
+        <div><b data-count="135">0</b><span>styles in store</span></div>
+        <div><b data-count="32">0</b><span>chikan stitches</span></div>
+        <div><b data-count="100">0</b><b>%</b><span>hand embroidered</span></div>
+      </div>
+    </div>
+    <div class="landmarks reveal">
+      <div class="lm"><svg viewBox="0 0 120 120"><path d="M10 115 V60 Q10 30 30 22 V10 M110 115 V60 Q110 30 90 22 V10 M30 115 V75 Q30 40 60 30 Q90 40 90 75 V115 M45 115 V80 Q45 58 60 52 Q75 58 75 80 V115 M60 30 V14 M52 18 Q60 8 68 18"/></svg><b>Rumi Darwaza</b><small>रूमी दरवाज़ा · 1784</small></div>
+      <div class="lm"><svg viewBox="0 0 120 120"><path d="M8 115 H112 M14 115 V70 H106 V115 M30 70 V50 Q60 18 90 50 V70 M60 30 V14 M20 70 V40 M100 70 V40 M16 40 Q20 30 24 40 M96 40 Q100 30 104 40 M40 115 V92 Q50 80 60 92 Q70 80 80 92 V115"/></svg><b>Bara Imambara</b><small>बड़ा इमामबाड़ा</small></div>
+      <div class="lm"><svg viewBox="0 0 120 120"><path d="M10 115 H110 M20 115 V60 L40 45 L60 60 V115 M60 115 V55 L80 40 L100 55 V115 M30 115 V85 H50 V115 M70 115 V80 H90 V115 M26 60 H54 M66 55 H94"/></svg><b>Chowk bazaar</b><small>चौक · home of chikan</small></div>
+      <div class="lm"><svg viewBox="0 0 120 120"><path d="M5 80 Q20 70 35 80 T65 80 T95 80 T125 80 M5 95 Q20 85 35 95 T65 95 T95 95 T125 95 M20 60 Q60 25 100 60 M28 60 V80 M92 60 V80 M60 42 V80"/></svg><b>Gomti</b><small>गोमती · the river city</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- process: pinned horizontal scroll -->
+<section class="process" id="process">
+  <div class="process-sticky">
+    <div class="process-head">
+      <span class="kicker">How it's made</span>
+      <h2 class="hop">From Chowk <em>to your closet</em></h2>
+      <div class="progress"><i id="procBar"></i></div>
+    </div>
+    <div class="process-track" id="procTrack"></div>
+  </div>
+</section>
+
+<!-- shop by occasion -->
+<section class="section" id="vibes">
+  <div class="sec-head reveal">
+    <span class="kicker">Shop by occasion</span>
+    <h2 class="hop">What's the <em>vibe?</em></h2>
+  </div>
+  <div class="vibes" id="vibeGrid"></div>
+</section>
+
+<!-- promo -->
+<section class="promo reveal" id="promo">
+  <div class="promo-img"><img id="promoImg" alt="Noori Flamingo Pink Bridal Saree" loading="lazy"></div>
+  <div class="promo-copy">
+    <span class="kicker light">Bridal edit · limited</span>
+    <h2>Noori <em>Flamingo</em> Bridal Saree</h2>
+    <p>Pink georgette, dense mukaish and chikan from pallu to border. The one your cousins will screenshot.</p>
+    <div class="promo-price"><b>₹15,500</b><s>₹35,000</s><span class="save">56% off</span></div>
+    <button class="btn alt magnetic" data-add="noori"><span>Add to bag</span></button>
+  </div>
+</section>
+
+<!-- reels -->
+<section class="section" id="reels">
+  <div class="sec-head reveal">
+    <span class="kicker">@rci_chikankari</span>
+    <h2 class="hop">Shop the <em>reel</em></h2>
+  </div>
+  <div class="reels" id="reelRow"></div>
+</section>
+
+<!-- reviews -->
+<section class="section reviews">
+  <div class="sec-head reveal">
+    <span class="kicker">4.8 ★ average</span>
+    <h2 class="hop">The group chat <em>said yes</em></h2>
+  </div>
+  <div class="belt"><div class="track" id="reviewTrack"></div></div>
+</section>
+
+<!-- contact -->
+<section class="section contact" id="contact">
+  <div class="contact-card reveal">
+    <div>
+      <span class="kicker">Talk to us</span>
+      <h2>Custom sizes, bulk orders, <em>worldwide shipping.</em></h2>
+      <p>International orders go through WhatsApp. Pay online and use <b>PREPAID10</b> for 10% off.</p>
+      <div class="contact-actions">
+        <a class="btn magnetic" href="https://wa.me/919305299500" target="_blank" rel="noopener"><span>WhatsApp us</span></a>
+        <button class="code" id="copyCode" type="button">PREPAID10 <small>tap to copy</small></button>
+      </div>
+    </div>
+    <ul class="contact-list">
+      <li><small>Call</small><a href="tel:+919305299500">+91 93052 99500</a><a href="tel:+919839122700">+91 98391 22700</a></li>
+      <li><small>Email</small><a href="mailto:firmsiddhivinayak@gmail.com">firmsiddhivinayak@gmail.com</a></li>
+      <li><small>Visit</small><span>325/81, Raja Prabhu Dayal Bagiya, Sondhi Tola, near Badi Kali Ji Mandir, Chowk, Lucknow 226374</span></li>
+      <li><small>Instagram</small><a href="https://instagram.com/rci_chikankari" target="_blank" rel="noopener">@rci_chikankari</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <img class="foot-logo" src="images/rci-logo.png" alt="RCI — Rupesh Chikan Industries" width="1024" height="640" loading="lazy">
+  <div class="giant hop" aria-label="Rupesh Chikan">Rupesh <em>Chikan</em></div>
+  <div class="foot-row">
+    <span>© Rupesh Chikan Industries, Lucknow</span>
+    <span>Free shipping across India · Returns &amp; exchanges</span>
+    <span class="note">Prototype. Photos are Unsplash placeholders; reviews are sample text.</span>
+  </div>
+</footer>
+
+<!-- side tab -->
+<a class="side-tab" href="#contact">PREPAID10 · 10% off</a>
+
+<!-- bag drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true">
+  <div class="drawer-head"><h3>Your bag</h3><button class="close" id="closeBag" aria-label="Close bag">✕</button></div>
+  <div class="ship"><b>Free shipping</b> across India, always ✿</div>
+  <div class="drawer-items" id="bagItems"></div>
+  <div class="drawer-foot">
+    <label class="prepaid"><input type="checkbox" id="prepaid"> Paying online? Apply <b>PREPAID10</b></label>
+    <div class="row"><span>Subtotal</span><b id="subtotal">₹0</b></div>
+    <div class="row save-row" id="discRow" hidden><span>PREPAID10</span><b id="disc">−₹0</b></div>
+    <div class="row total"><span>Total</span><b id="total">₹0</b></div>
+    <button class="btn full" id="checkout"><span>Checkout</span></button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status"></div>
+<canvas class="thread" id="thread" aria-hidden="true"></canvas>
+<div class="cursor" id="cursor" aria-hidden="true"><span>VIEW</span></div>
+
+<script src="script.js?v=5"></script>
+</body>
+</html>
